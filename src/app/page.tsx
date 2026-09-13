@@ -27,18 +27,18 @@ export default function Home() {
           <div className="flex flex-col justify-center">
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <span className="mono-label rounded bg-slate-950 px-2.5 py-1 text-xs font-bold uppercase text-emerald-300">
-                hackathon build
+                Ace Your Exams
               </span>
               <span className="rounded bg-cyan-50 px-2.5 py-1 text-xs font-semibold text-cyan-800 ring-1 ring-cyan-100">
-                grounded AI viva prep
+                grounded AI exam prep
               </span>
             </div>
 
             <h1 className="max-w-2xl text-4xl font-black tracking-normal text-slate-950 sm:text-5xl">
-              StudySpeak
+              AcExams
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              Turn class resources into oral exam practice. Upload course material,
+              Turn class resources into exam practice. Upload course material,
               choose a generated topic, speak your answer, and get feedback that
               is checked against the notes your batch actually uses.
             </p>

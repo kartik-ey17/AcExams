@@ -3,7 +3,7 @@ import AppChrome from "@/components/AppChrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "StudySpeak - AI-Powered Viva Practice",
+  title: "AcExams - AI-Powered Exam Practice",
   description: "Turn your course material into an AI-powered viva examination",
 };
 
