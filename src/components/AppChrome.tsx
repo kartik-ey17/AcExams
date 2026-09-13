@@ -62,9 +62,9 @@ export default function AppChrome({ children }: { children: React.ReactNode }) {
               S
             </span>
             <span className="min-w-0">
-              <span className="block text-base font-black leading-tight">StudySpeak</span>
+              <span className="block text-base font-black leading-tight">AcExam</span>
               <span className="mono-label hidden text-[10px] uppercase text-slate-500 sm:block">
-                resource-grounded viva prep
+                resource-grounded exam prep
               </span>
             </span>
           </a>

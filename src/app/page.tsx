@@ -9,7 +9,7 @@ const steps = [
   {
     label: "02",
     title: "Pick a viva topic",
-    copy: "StudySpeak generates topics only from the material students uploaded.",
+    copy: "AcExams generates topics only from the material students uploaded.",
   },
   {
     label: "03",
