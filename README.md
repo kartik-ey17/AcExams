@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AcExams(ace-exams)
 
-## Getting Started
+### Turn course resources into an AI-powered viva.
 
-First, run the development server:
+> **Upload. Study. Speak. Get evaluated.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+StudySpeak is an **AI-powered student workspace** that transforms course resources
+into an interactive viva and speaking-practice experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Students can study from course resources contributed by other students, receive
+AI-generated important topics and viva questions, answer them by speaking, and
+receive an AI evaluation based specifically on the **actual material associated
+with their course**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The goal is simple:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Don't just read your notes. Practice explaining them.**
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## The Problem
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Students often prepare for exams by repeatedly reading lecture notes, modules,
+and question banks.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+But exams, vivas, and interviews require something different:
 
-## Deploy on Vercel
+> **Can you actually explain what you studied?**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A student may recognize a concept while reading it but struggle to explain it
+when asked a question without looking at their notes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+StudySpeak turns passive study material into **active recall and speaking
+practice**, allowing students to practice explaining concepts before the real
+exam.
+
+---
+
+## The Core Experience
+
+```text
+Course Resources
+       ↓
+AI understands the material
+       ↓
+Important topics are identified
+       ↓
+AI generates a viva prompt
+       ↓
+Student speaks their answer
+       ↓
+Speech → Text
+       ↓
+AI evaluates the response
+against the course material
+       ↓
+Score + Covered Concepts
++ Missing Concepts + Feedback
