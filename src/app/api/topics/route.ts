@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Topic generation error:', error);
     return NextResponse.json(
-      { error: 'Failed to generate topics. Check your GEMINI_API_KEY.' },
+      { error: 'Could not generate grounded topics from the course resources. Please check your GEMINI_API_KEY or try again.' },
       { status: 500 }
     );
   }

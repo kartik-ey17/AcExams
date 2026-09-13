@@ -4,11 +4,13 @@
 export interface Resource {
   id: string;
   courseId: string;
-  type: 'pdf' | 'notes' | 'question-bank' | 'topics' | 'lecture';
+  type: string;
   title: string;
   content: string; // extracted text content
   fileName?: string;
   contributorName?: string;
+  githubUrl?: string;
+  portfolioUrl?: string;
   contributorUrl?: string;
   createdAt: string;
 }
@@ -216,4 +218,71 @@ export function addCourse(name: string, description: string): Course {
   };
   courses.push(newCourse);
   return newCourse;
+}
+
+export interface ContributorEntry {
+  name: string;
+  count: number;
+  githubUrl?: string;
+  portfolioUrl?: string;
+  contributorUrl?: string;
+}
+
+// Initial demo seed contributors
+const initialContributors: ContributorEntry[] = [
+  {
+    name: 'Devin K.',
+    count: 12,
+    githubUrl: 'https://github.com/devink',
+  },
+  {
+    name: 'Priya S.',
+    count: 9,
+    portfolioUrl: 'https://priyas.dev',
+  },
+  {
+    name: 'Marcus T.',
+    count: 7,
+    githubUrl: 'https://github.com/marcust',
+  },
+];
+
+export function getContributorLeaderboard(): ContributorEntry[] {
+  const countsMap = new Map<string, { count: number; githubUrl?: string; portfolioUrl?: string; contributorUrl?: string }>();
+
+  // Add initial seeds
+  for (const c of initialContributors) {
+    countsMap.set(c.name, {
+      count: c.count,
+      githubUrl: c.githubUrl,
+      portfolioUrl: c.portfolioUrl,
+    });
+  }
+
+  // Count from uploaded resources
+  for (const course of courses) {
+    for (const r of course.resources) {
+      if (r.contributorName && r.contributorName.trim()) {
+        const name = r.contributorName.trim();
+        const existing = countsMap.get(name) || { count: 0 };
+        countsMap.set(name, {
+          count: existing.count + 1,
+          githubUrl: r.githubUrl || existing.githubUrl,
+          portfolioUrl: r.portfolioUrl || existing.portfolioUrl,
+          contributorUrl: r.contributorUrl || existing.contributorUrl,
+        });
+      }
+    }
+  }
+
+  const result: ContributorEntry[] = Array.from(countsMap.entries()).map(([name, data]) => ({
+    name,
+    count: data.count,
+    githubUrl: data.githubUrl,
+    portfolioUrl: data.portfolioUrl,
+    contributorUrl: data.contributorUrl,
+  }));
+
+  // Sort descending by number of contributions
+  return result.sort((a, b) => b.count - a.count);
 }

@@ -1,63 +1,110 @@
 import Link from "next/link";
 
+const steps = [
+  {
+    label: "01",
+    title: "Upload notes",
+    copy: "Add PDFs, modules, question banks, or pasted notes to a course.",
+  },
+  {
+    label: "02",
+    title: "Pick a viva topic",
+    copy: "StudySpeak generates topics only from the material students uploaded.",
+  },
+  {
+    label: "03",
+    title: "Speak and get scored",
+    copy: "Practice out loud, then see covered concepts, missed concepts, and concise feedback.",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="text-center py-16">
-      <h1 className="text-5xl font-bold mb-4">📚 StudySpeak</h1>
-      <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Turn your course material into an AI-powered viva examination.
-        Upload notes, PDFs, and question banks — then practice speaking your answers
-        and get instant AI feedback.
-      </p>
+    <div className="space-y-8">
+      <section className="surface overflow-hidden rounded-lg">
+        <div className="signal-band h-2" />
+        <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:p-10">
+          <div className="flex flex-col justify-center">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <span className="mono-label rounded bg-slate-950 px-2.5 py-1 text-xs font-bold uppercase text-emerald-300">
+                hackathon build
+              </span>
+              <span className="rounded bg-cyan-50 px-2.5 py-1 text-xs font-semibold text-cyan-800 ring-1 ring-cyan-100">
+                grounded AI viva prep
+              </span>
+            </div>
 
-      <div className="flex gap-4 justify-center mb-12">
-        <Link
-          href="/contribute"
-          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium"
-        >
-          📤 Contribute Resources
-        </Link>
-        <Link
-          href="/study"
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
-        >
-          🎓 Start Studying
-        </Link>
-      </div>
+            <h1 className="max-w-2xl text-4xl font-black tracking-normal text-slate-950 sm:text-5xl">
+              StudySpeak
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              Turn class resources into oral exam practice. Upload course material,
+              choose a generated topic, speak your answer, and get feedback that
+              is checked against the notes your batch actually uses.
+            </p>
 
-      <div className="text-left max-w-2xl mx-auto bg-white rounded-lg p-8 shadow">
-        <h2 className="text-2xl font-bold mb-4">How It Works</h2>
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <span className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</span>
-            <div>
-              <h3 className="font-semibold">Upload Course Resources</h3>
-              <p className="text-gray-600 text-sm">Add PDFs, notes, question banks, or important topics to any course.</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/study"
+                className="inline-flex items-center justify-center rounded-md bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-cyan-950"
+              >
+                Start Study Mode
+              </Link>
+              <Link
+                href="/contribute"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-emerald-700"
+              >
+                Contribute Resources
+              </Link>
             </div>
           </div>
-          <div className="flex gap-3">
-            <span className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</span>
-            <div>
-              <h3 className="font-semibold">AI Generates Topics</h3>
-              <p className="text-gray-600 text-sm">Our AI reads your uploaded material and generates important viva topics.</p>
+
+          <div className="soft-panel rounded-lg p-4">
+            <div className="mb-3 flex items-center justify-between">
+              <span className="mono-label text-xs font-bold uppercase text-slate-500">live practice loop</span>
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
             </div>
-          </div>
-          <div className="flex gap-3">
-            <span className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</span>
-            <div>
-              <h3 className="font-semibold">Speak Your Answer</h3>
-              <p className="text-gray-600 text-sm">Choose a topic, set a timer (1-10 min), and speak into your microphone.</p>
-            </div>
-          </div>
-          <div className="flex gap-3">
-            <span className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</span>
-            <div>
-              <h3 className="font-semibold">Get AI Evaluation</h3>
-              <p className="text-gray-600 text-sm">Receive a score, see what you covered, what you missed, and get actionable feedback.</p>
+            <div className="space-y-3">
+              <div className="rounded-md bg-white p-4 ring-1 ring-slate-200">
+                <p className="mono-label text-[11px] font-bold uppercase text-cyan-700">Resource</p>
+                <p className="mt-1 text-sm font-semibold text-slate-900">
+                  Module 5: Concurrency and Synchronization
+                </p>
+              </div>
+              <div className="rounded-md bg-slate-950 p-4 text-white">
+                <p className="mono-label text-[11px] font-bold uppercase text-emerald-300">Viva prompt</p>
+                <p className="mt-2 text-sm leading-6 text-slate-100">
+                  Explain semaphores and the critical section problem using the uploaded module.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="rounded-md bg-white p-3 text-center ring-1 ring-slate-200">
+                  <p className="text-xl font-black text-slate-950">84</p>
+                  <p className="mono-label text-[10px] uppercase text-slate-500">score</p>
+                </div>
+                <div className="rounded-md bg-white p-3 text-center ring-1 ring-slate-200">
+                  <p className="text-xl font-black text-emerald-700">6</p>
+                  <p className="mono-label text-[10px] uppercase text-slate-500">covered</p>
+                </div>
+                <div className="rounded-md bg-white p-3 text-center ring-1 ring-slate-200">
+                  <p className="text-xl font-black text-amber-700">2</p>
+                  <p className="mono-label text-[10px] uppercase text-slate-500">missing</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="grid gap-4 md:grid-cols-3">
+        {steps.map(step => (
+          <div key={step.label} className="surface rounded-lg p-5">
+            <span className="mono-label text-xs font-black text-cyan-700">{step.label}</span>
+            <h2 className="mt-3 text-lg font-bold text-slate-950">{step.title}</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">{step.copy}</p>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }
